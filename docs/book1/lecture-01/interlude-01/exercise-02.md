@@ -35,3 +35,12 @@ where $-\mathbf{b}$ is the additive inverse of $\mathbf{b}$.
 $$
 (3,-1)-(2,4)=(3-2,-1-4)=(1,-5).
 $$
+
+## Example drawing (GitHub preview)
+
+The figure below visualizes the same 2D example with
+$\mathbf{a}=(3,-1)$, $\mathbf{b}=(2,4)$, and $\mathbf{a}-\mathbf{b}=(1,-5)$.
+The dashed red arrow shows the "tip of $\mathbf{b}$ to tip of $\mathbf{a}$"
+interpretation.
+
+![Vector subtraction example](./exercise-02-vector-subtraction.png)
