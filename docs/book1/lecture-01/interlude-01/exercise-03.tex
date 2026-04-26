@@ -1,0 +1,94 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newtheorem*{claim}{Claim}
+
+\newcommand{\promptbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{blue!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Prompt. }#1}}
+  \endgroup
+}
+\newcommand{\resultbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{purple!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Result. }#1}}
+  \endgroup
+}
+\newcommand{\examplebox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{green!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Example. }#1}}
+  \endgroup
+}
+
+\title{\textbf{Book 1 --- Lecture 1 --- Interlude 1 --- Exercise 3}\\[2mm]
+\large Magnitude Squared and Dot Product}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\promptbox{Show that the magnitude of a vector satisfies
+\[
+\lVert\mathbf{A}\rVert^2 = \mathbf{A}\cdot\mathbf{A}.
+\]}
+
+Let
+\[
+\mathbf{A} = (A_1, A_2, \dots, A_n).
+\]
+
+\begin{claim}
+\[
+\lVert\mathbf{A}\rVert^2 = \mathbf{A}\cdot\mathbf{A}.
+\]
+\end{claim}
+
+\begin{proof}
+By definition of Euclidean magnitude,
+\[
+\lVert\mathbf{A}\rVert = \sqrt{A_1^2 + A_2^2 + \cdots + A_n^2}.
+\]
+Squaring both sides gives
+\[
+\lVert\mathbf{A}\rVert^2 = A_1^2 + A_2^2 + \cdots + A_n^2.
+\]
+
+By definition of dot product,
+\[
+\mathbf{A}\cdot\mathbf{A}
+= (A_1,\dots,A_n)\cdot(A_1,\dots,A_n)
+= A_1^2 + A_2^2 + \cdots + A_n^2.
+\]
+Hence,
+\[
+\lVert\mathbf{A}\rVert^2 = \mathbf{A}\cdot\mathbf{A}. \qedhere
+\]
+\end{proof}
+
+\resultbox{The identity follows directly from component definitions of the
+Euclidean norm and dot product: both reduce to the same sum of squares.}
+
+\examplebox{For \(\mathbf{A}=(3,-4,12)\),
+\[
+\mathbf{A}\cdot\mathbf{A} = 3^2 + (-4)^2 + 12^2 = 169,\qquad
+\lVert\mathbf{A}\rVert = 13,\qquad
+\lVert\mathbf{A}\rVert^2 = 169.
+\]
+So the identity holds numerically.}
+
+\end{document}

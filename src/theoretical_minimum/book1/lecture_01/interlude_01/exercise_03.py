@@ -1,7 +1,8 @@
 """Interlude 1, Exercise 3 - show ||A||^2 = A·A.
 
-Markdown copy (linked from the repo README):
-``docs/book1/lecture-01/interlude-01/exercise-03.md``.
+TeX/PDF write-up (linked from the repo README):
+``docs/book1/lecture-01/interlude-01/exercise-03.tex``,
+``docs/book1/lecture-01/interlude-01/exercise-03.pdf``.
 """
 
 from __future__ import annotations

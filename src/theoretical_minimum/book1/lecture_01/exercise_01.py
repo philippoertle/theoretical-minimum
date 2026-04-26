@@ -1,6 +1,8 @@
 """Exercise 1 — Closed systems, open systems, and what we assume.
 
-Markdown copy (linked from the repo README): ``docs/book1/lecture-01/exercise-01.md``.
+TeX/PDF write-up (linked from the repo README):
+``docs/book1/lecture-01/exercise-01.tex``,
+``docs/book1/lecture-01/exercise-01.pdf``.
 
 **Prompt (paraphrased).** Since the notion is so important to theoretical
 physics, think about what a closed system is and speculate on whether closed

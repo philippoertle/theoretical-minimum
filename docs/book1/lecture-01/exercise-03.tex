@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\promptbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{blue!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Prompt. }#1}}
+  \endgroup
+}
+\newcommand{\resultbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{purple!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Result. }#1}}
+  \endgroup
+}
+\newcommand{\examplebox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{green!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Example. }#1}}
+  \endgroup
+}
+
+\title{\textbf{Book 1 --- Lecture 1 --- Exercise 3}\\[2mm]
+\large Allowable Laws on the Integer Line}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\promptbox{Determine which of the dynamical laws shown in Eqs.\ (2) through (5)
+are \emph{allowable}. Equation (1), \(N(n+1)=N(n)-1\), is given as an allowable
+example.}
+
+\section*{What ``allowable'' means}
+A law is allowable when it is:
+\begin{enumerate}
+  \item \textbf{Deterministic}: each current state has one successor.
+  \item \textbf{Reversible}: each state has one predecessor (bijection on \(\mathbb{Z}\)).
+\end{enumerate}
+
+\section*{Equations}
+\[
+\begin{aligned}
+(1)\quad &N(n+1)=N(n)-1,\\
+(2)\quad &N(n+1)=N(n)+1,\\
+(3)\quad &N(n+1)=N(n)+2,\\
+(4)\quad &N(n+1)=N(n)^2,\\
+(5)\quad &N(n+1)=(-1)^{N(n)}N(n).
+\end{aligned}
+\]
+
+\section*{Verdicts}
+\textbf{(2) \(N(n+1)=N(n)+1\): allowable.}\\
+It is the inverse-time version of Eq.\ (1), with inverse \(N\mapsto N-1\).
+
+\textbf{(3) \(N(n+1)=N(n)+2\): allowable.}\\
+It is a bijection with inverse \(N\mapsto N-2\).
+
+\textbf{(4) \(N(n+1)=N(n)^2\): not allowable.}\\
+Not injective (\(2^2=(-2)^2\)) and not surjective onto \(\mathbb{Z}\).
+
+\textbf{(5) \(N(n+1)=(-1)^{N(n)}N(n)\): allowable.}\\
+Even integers are fixed; odd integers map to their negative, giving 2-cycles.
+Each state has a unique predecessor.
+
+\section*{Summary}
+\[
+\begin{array}{c|c}
+\text{Equation} & \text{Allowable?} \\
+\hline
+(2)\ N(n+1)=N(n)+1 & \text{Yes} \\
+(3)\ N(n+1)=N(n)+2 & \text{Yes} \\
+(4)\ N(n+1)=N(n)^2 & \text{No} \\
+(5)\ N(n+1)=(-1)^{N(n)}N(n) & \text{Yes}
+\end{array}
+\]
+
+\resultbox{Allowable: (2), (3), and (5). Not allowable: (4).}
+
+\examplebox{Eq.\ (4) fails reversibility immediately because
+\(2^2=(-2)^2=4\), so the predecessor of 4 is not unique.}
+
+\end{document}

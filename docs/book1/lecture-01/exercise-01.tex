@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\promptbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{blue!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Prompt. }#1}}
+  \endgroup
+}
+\newcommand{\resultbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{purple!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Result. }#1}}
+  \endgroup
+}
+\newcommand{\examplebox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{green!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Example. }#1}}
+  \endgroup
+}
+
+\title{\textbf{Book 1 --- Lecture 1 --- Exercise 1}\\[2mm]
+\large Closed vs Open Systems}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\promptbox{Since the notion is so important to theoretical physics, think about
+what a closed system is and speculate on whether closed systems can actually
+exist. What assumptions are implicit in establishing a closed system? What is an
+open system?}
+
+\section*{Closed System (working definition)}
+In theoretical physics, a \emph{closed} system is one you describe with a
+\emph{complete} set of dynamical variables and \emph{deterministic} (or, in
+quantum theory, unitary) laws that involve \emph{only} those variables.
+Nothing outside the model is allowed to influence the state except through
+quantities you have already included.
+
+\section*{Implicit Assumptions}
+Calling a system ``closed'' usually includes several idealizations:
+\begin{itemize}
+  \item \textbf{Exhaustive state:} all relevant degrees of freedom are modeled.
+  \item \textbf{Known laws:} dynamics is assumed exact for that state.
+  \item \textbf{Isolation:} outside influences are negligible or explicitly modeled.
+  \item \textbf{Boundary in time and space:} closure is only approximate over a chosen window.
+\end{itemize}
+
+\section*{Can Closed Systems Actually Exist?}
+Operationally, we can approximate closure very well. Fundamentally, perfect
+closure is doubtful: long-range gravity, environmental coupling, and quantum
+entanglement are hard to eliminate completely. In practice, ``closed'' is a
+controlled approximation whose quality depends on the required precision.
+
+\section*{Open System}
+An \emph{open} system exchanges energy, momentum, particles, or information with
+an environment that is not fully tracked. Its effective dynamics then includes
+dissipation, noise, driving, or explicit coupling terms. Often the combined
+``system + environment'' is treated as closed, while the subsystem of interest
+is open.
+
+\resultbox{Classical mechanics often starts with closed deterministic models.
+When that is insufficient, one either enlarges the modeled system or uses
+open-system descriptions.}
+
+\examplebox{A pendulum in vacuum over short times can be modeled as nearly
+closed; adding air drag and thermal fluctuations turns it into an open-system
+description.}
+
+\end{document}

@@ -1,6 +1,8 @@
 """Exercise 3 - Which discrete laws on the integers are *allowable*?
 
-Markdown copy (linked from the repo README): ``docs/book1/lecture-01/exercise-03.md``.
+TeX/PDF write-up (linked from the repo README):
+``docs/book1/lecture-01/exercise-03.tex``,
+``docs/book1/lecture-01/exercise-03.pdf``.
 
 In Lecture 1 / this chapter, a dynamical law ``N(n+1) = f(N(n))`` on the integer
 line is **allowable** when it is:

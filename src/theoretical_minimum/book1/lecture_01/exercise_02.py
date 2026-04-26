@@ -1,6 +1,8 @@
 """Exercise 2 — Classifying dynamical laws on a six-state system.
 
-Markdown copy (linked from the repo README): ``docs/book1/lecture-01/exercise-02.md``.
+TeX/PDF write-up (linked from the repo README):
+``docs/book1/lecture-01/exercise-02.tex``,
+``docs/book1/lecture-01/exercise-02.pdf``.
 
 A *law* here is deterministic: each face of the die has exactly one successor
 state. The lecture examples all preserve information in the sense that each

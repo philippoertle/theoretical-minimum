@@ -9,29 +9,26 @@ Coverage is intended to span the full four-book sequence; work here begins with 
 
 The goal is not to replace the books or lectures, but to provide reproducible, checkable computations where exercises benefit from symbolic or numerical work, plus short written notes where an exercise is conceptual.
 
-## Written solutions (Markdown)
+## Written solutions
 
-- **Book 1, Lecture 1, Exercise 1** — [Closed vs open systems](docs/book1/lecture-01/exercise-01.md)
-- **Book 1, Lecture 1, Exercise 2** — [Classifying six-state (die) laws](docs/book1/lecture-01/exercise-02.md)
-- **Book 1, Lecture 1, Exercise 3** — [Allowable laws on the integer line](docs/book1/lecture-01/exercise-03.md)
-- **Book 1, Lecture 1, Interlude 1, Exercise 1** — [Plotting four introductory functions](docs/book1/lecture-01/interlude-01/exercise-01.md)
-- **Book 1, Lecture 1, Interlude 1, Exercise 2** — [Vector subtraction rule](docs/book1/lecture-01/interlude-01/exercise-02.md)
-- **Book 1, Lecture 1, Interlude 1, Exercise 3** — [Why $\lVert\mathbf{A}\rVert^2=\mathbf{A}\cdot\mathbf{A}$](docs/book1/lecture-01/interlude-01/exercise-03.md)
+- **Book 1, Lecture 1, Exercise 1** — [Closed vs open systems (PDF)](docs/book1/lecture-01/exercise-01.pdf) ([TeX source](docs/book1/lecture-01/exercise-01.tex))
+- **Book 1, Lecture 1, Exercise 2** — [Classifying six-state (die) laws (PDF)](docs/book1/lecture-01/exercise-02.pdf) ([TeX source](docs/book1/lecture-01/exercise-02.tex))
+- **Book 1, Lecture 1, Exercise 3** — [Allowable laws on the integer line (PDF)](docs/book1/lecture-01/exercise-03.pdf) ([TeX source](docs/book1/lecture-01/exercise-03.tex))
+- **Book 1, Lecture 1, Interlude 1, Exercise 1** — [Plotting four introductory functions (PDF)](docs/book1/lecture-01/interlude-01/exercise-01.pdf) ([TeX source](docs/book1/lecture-01/interlude-01/exercise-01.tex))
+- **Book 1, Lecture 1, Interlude 1, Exercise 2** — [Vector subtraction rule (PDF)](docs/book1/lecture-01/interlude-01/exercise-02.pdf) ([TeX source](docs/book1/lecture-01/interlude-01/exercise-02.tex))
+- **Book 1, Lecture 1, Interlude 1, Exercise 3** — [Why \|\|A\|\|^2 = A·A (PDF)](docs/book1/lecture-01/interlude-01/exercise-03.pdf) ([TeX source](docs/book1/lecture-01/interlude-01/exercise-03.tex))
 
-## Math in Markdown (GitHub style)
+## Authoring and rendering workflow
 
-To keep equations readable on GitHub, use TeX math delimiters consistently:
+Written solutions are maintained as `.tex` sources and committed `.pdf` outputs.
+The PDF is the canonical rendered artifact for reading on GitHub.
 
-- Inline math: `$...$` (example: `$N_{n+1}=N_n+1$`)
-- Display math blocks: `$$...$$`
+- Keep notation and typography consistent across TeX files.
+- Highlight `Prompt`, `Result`, and `Example` blocks in each exercise.
+- Preserve source/compiled pairs in the same directory:
+  - `exercise-XX.tex`
+  - `exercise-XX.pdf`
 
-Preferred notation:
+To rebuild a PDF locally, run:
 
-- Use TeX forms like `\mathbb{Z}`, `N_{n+1}`, `N_n`, `n^2`, `(-1)^{N_n}`.
-- Use TeX arrows in math mode, e.g. `\to`, `\leftrightarrow`, `\mapsto`.
-- **Vectors:** bold uppercase components, e.g. `$\mathbf{A}=(A_1,\dots,A_n)$`; Euclidean norm `$\lVert\mathbf{A}\rVert$`; dot product `$\mathbf{A}\cdot\mathbf{B}$`. (You may use `$\vec{A}$` instead of `$\mathbf{A}$` if you prefer arrows, but stay consistent within one doc.)
-- Avoid Unicode math symbols in source (`ℤ`, `→`, `−`, `²`) to prevent renderer/font ambiguity.
-
-Practical tip:
-
-- Keep long equations in standalone display blocks, and use inline math for short expressions in prose/tables.
+`pdflatex -interaction=nonstopmode -halt-on-error -output-directory "<target-dir>" "<path-to-tex-file>"`

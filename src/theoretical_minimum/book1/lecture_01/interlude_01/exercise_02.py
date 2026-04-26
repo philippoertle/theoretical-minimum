@@ -1,7 +1,8 @@
 """Interlude 1, Exercise 2 - vector subtraction rule.
 
-Markdown copy (linked from the repo README):
-``docs/book1/lecture-01/interlude-01/exercise-02.md``.
+TeX/PDF write-up (linked from the repo README):
+``docs/book1/lecture-01/interlude-01/exercise-02.tex``,
+``docs/book1/lecture-01/interlude-01/exercise-02.pdf``.
 
 For vectors represented as equal-length coordinate lists/tuples:
 

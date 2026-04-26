@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\promptbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{blue!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Prompt. }#1}}
+  \endgroup
+}
+\newcommand{\resultbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{purple!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Result. }#1}}
+  \endgroup
+}
+\newcommand{\examplebox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{green!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Example. }#1}}
+  \endgroup
+}
+
+\title{\textbf{Book 1 --- Lecture 1 --- Exercise 2}\\[2mm]
+\large Classifying Six-State Laws}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\promptbox{Can you think of a general way to classify the laws that are possible
+for a six-state system?}
+
+\section*{Setup}
+The six states are the faces of a die. A deterministic law maps each state to
+exactly one successor.
+
+\section*{Reversible Case (as in the examples)}
+In the four textbook examples, each state has exactly one successor and one
+predecessor. So the law is a permutation of six labels. Such laws are
+classified, up to relabeling, by their cycle type (equivalently, a partition of
+6).
+
+There are 11 partitions of 6:
+\[
+\begin{aligned}
+&(6),\ (5,1),\ (4,2),\ (4,1,1),\ (3,3),\ (3,2,1),\\
+&(3,1,1,1),\ (2,2,2),\ (2,2,1,1),\ (2,1,1,1,1),\ (1,1,1,1,1,1).
+\end{aligned}
+\]
+
+\section*{The Four Examples}
+\[
+\begin{aligned}
+1\to2\to3\to4\to5\to6\to1 &\quad\Rightarrow\quad (6),\\
+1\to3\to2\to6\to4\to5\to1 &\quad\Rightarrow\quad (6),\\
+1\to2\to6\to1,\ \ 3\to4\to5\to3 &\quad\Rightarrow\quad (3,3),\\
+1\to1,\ \ 5\leftrightarrow6,\ \ 2\to3\to4\to2 &\quad\Rightarrow\quad (3,2,1).
+\end{aligned}
+\]
+
+So examples 1 and 2 are in the same class (both a single 6-cycle), despite
+different label orderings.
+
+\resultbox{For reversible six-state laws, classification up to relabeling is
+exactly the classification by partitions of 6 (cycle types).}
+
+\examplebox{Two distinct-looking update tables can still represent the same
+class. For instance, examples 1 and 2 are both one 6-cycle and therefore
+equivalent under relabeling.}
+
+\end{document}

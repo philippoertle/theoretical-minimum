@@ -1,7 +1,8 @@
 """Interlude 1, Exercise 1 - plot four introductory functions.
 
-Markdown copy (linked from the repo README):
-``docs/book1/lecture-01/interlude-01/exercise-01.md``.
+TeX/PDF write-up (linked from the repo README):
+``docs/book1/lecture-01/interlude-01/exercise-01.tex``,
+``docs/book1/lecture-01/interlude-01/exercise-01.pdf``.
 
 Functions from the prompt:
 
