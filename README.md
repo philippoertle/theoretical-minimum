@@ -17,6 +17,9 @@ The goal is not to replace the books or lectures, but to provide reproducible, c
 - **Book 1, Lecture 1, Interlude 1, Exercise 1** — [Plotting four introductory functions (PDF)](docs/book1/lecture-01/interlude-01/exercise-01.pdf) ([TeX source](docs/book1/lecture-01/interlude-01/exercise-01.tex))
 - **Book 1, Lecture 1, Interlude 1, Exercise 2** — [Vector subtraction rule (PDF)](docs/book1/lecture-01/interlude-01/exercise-02.pdf) ([TeX source](docs/book1/lecture-01/interlude-01/exercise-02.tex))
 - **Book 1, Lecture 1, Interlude 1, Exercise 3** — [Why \|\|A\|\|^2 = A·A (PDF)](docs/book1/lecture-01/interlude-01/exercise-03.pdf) ([TeX source](docs/book1/lecture-01/interlude-01/exercise-03.tex))
+- **Book 1, Lecture 1, Interlude 1, Exercise 4** — [Vector magnitudes, dot product, and angle (PDF)](docs/book1/lecture-01/interlude-01/exercise-04.pdf) ([TeX source](docs/book1/lecture-01/interlude-01/exercise-04.tex))
+- **Book 1, Lecture 1, Interlude 1, Exercise 5** — [Orthogonal vector pair (PDF)](docs/book1/lecture-01/interlude-01/exercise-05.pdf) ([TeX source](docs/book1/lecture-01/interlude-01/exercise-05.tex))
+- **Book 1, Lecture 1, Interlude 1, Exercise 6** — [Why orthogonal vectors have zero dot product (PDF)](docs/book1/lecture-01/interlude-01/exercise-06.pdf) ([TeX source](docs/book1/lecture-01/interlude-01/exercise-06.tex))
 
 ## Authoring and rendering workflow
 

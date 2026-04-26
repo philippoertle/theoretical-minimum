@@ -40,8 +40,13 @@ example.}
 \section*{What ``allowable'' means}
 A law is allowable when it is:
 \begin{enumerate}
-  \item \textbf{Deterministic}: each current state has one successor.
-  \item \textbf{Reversible}: each state has one predecessor (bijection on \(\mathbb{Z}\)).
+  \item \textbf{Deterministic}: each current state has one successor.\footnote{A
+  \emph{successor} is the state reached in one forward update.}
+  \item \textbf{Reversible}: each state has one predecessor\footnote{A
+  \emph{predecessor} is a state that maps to the current one under the update
+  rule.} (bijection\footnote{A \emph{bijection} is both one-to-one and onto:
+  every target has exactly one source.} on \(\mathbb{Z}\)\footnote{\(\mathbb{Z}\)
+  denotes all integers: \(\dots,-2,-1,0,1,2,\dots\).}).
 \end{enumerate}
 
 \section*{Equations}
@@ -63,7 +68,9 @@ It is the inverse-time version of Eq.\ (1), with inverse \(N\mapsto N-1\).
 It is a bijection with inverse \(N\mapsto N-2\).
 
 \textbf{(4) \(N(n+1)=N(n)^2\): not allowable.}\\
-Not injective (\(2^2=(-2)^2\)) and not surjective onto \(\mathbb{Z}\).
+Not injective\footnote{\emph{Injective} means different inputs give different
+outputs.} (\(2^2=(-2)^2\)) and not surjective\footnote{\emph{Surjective} means
+every target value is hit by at least one input.} onto \(\mathbb{Z}\).
 
 \textbf{(5) \(N(n+1)=(-1)^{N(n)}N(n)\): allowable.}\\
 Even integers are fixed; odd integers map to their negative, giving 2-cycles.

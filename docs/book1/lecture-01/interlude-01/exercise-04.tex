@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\promptbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{blue!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Prompt. }#1}}
+  \endgroup
+}
+\newcommand{\resultbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{purple!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Result. }#1}}
+  \endgroup
+}
+\newcommand{\examplebox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{green!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Example. }#1}}
+  \endgroup
+}
+
+\title{\textbf{Book 1 --- Lecture 1 --- Interlude 1 --- Exercise 4}\\[2mm]
+\large Magnitudes, Dot Product, and Angle}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\promptbox{Let \(\mathbf{A}=(A_x,A_y,A_z)=(2,-3,1)\) and
+\(\mathbf{B}=(B_x,B_y,B_z)=(-4,-3,2)\). Compute the magnitudes of
+\(\mathbf{A}\) and \(\mathbf{B}\), their dot product, and the angle between
+them.}
+
+\section*{Computation}
+\[
+\begin{aligned}
+\lVert\mathbf{A}\rVert &= \sqrt{2^2+(-3)^2+1^2}=\sqrt{14}\approx 3.741657,\\
+\lVert\mathbf{B}\rVert &= \sqrt{(-4)^2+(-3)^2+2^2}=\sqrt{29}\approx 5.385165,\\
+\mathbf{A}\cdot\mathbf{B} &= 2(-4)+(-3)(-3)+1(2)=3.
+\end{aligned}
+\]
+Here \(\lVert\cdot\rVert\) denotes vector magnitude\footnote{Euclidean norm,
+computed as square root of the sum of squared components.} and
+\(\mathbf{A}\cdot\mathbf{B}\) denotes dot product\footnote{For
+\(\mathbf{u},\mathbf{v}\in\mathbb{R}^n\), \(\mathbf{u}\cdot\mathbf{v}=\sum_i u_i
+v_i\).}.
+
+For the angle \(\theta\)\footnote{By convention, \(\theta\) often denotes an
+angle between vectors in geometry and trigonometry.} between vectors:
+\[
+\cos\theta=\frac{\mathbf{A}\cdot\mathbf{B}}{\lVert\mathbf{A}\rVert\lVert\mathbf{B}\rVert}
+=\frac{3}{\sqrt{14}\sqrt{29}}=\frac{3}{\sqrt{406}}.
+\]
+Hence,
+\[
+\theta=\arccos\!\left(\frac{3}{\sqrt{406}}\right)\approx 1.421388~\text{rad}
+\approx 81.437539^\circ.
+\]
+
+\resultbox{\(\lVert\mathbf{A}\rVert=\sqrt{14}\), \(\lVert\mathbf{B}\rVert=\sqrt{29}\),
+\(\mathbf{A}\cdot\mathbf{B}=3\), and the angle is
+\(\theta\approx 81.44^\circ\).}
+
+\examplebox{Since \(\mathbf{A}\cdot\mathbf{B}>0\), the angle is acute
+(\(<90^\circ\)), matching the computed value \(81.44^\circ\).}
+
+\end{document}

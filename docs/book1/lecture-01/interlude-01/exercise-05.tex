@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\promptbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{blue!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Prompt. }#1}}
+  \endgroup
+}
+\newcommand{\resultbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{purple!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Result. }#1}}
+  \endgroup
+}
+\newcommand{\examplebox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{green!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Example. }#1}}
+  \endgroup
+}
+
+\title{\textbf{Book 1 --- Lecture 1 --- Interlude 1 --- Exercise 5}\\[2mm]
+\large Orthogonal Vector Pair}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\promptbox{Determine which pair of vectors are orthogonal:
+\((1,1,1)\), \((2,-1,3)\), \((3,1,0)\), and \((-3,0,2)\).}
+
+\section*{Method}
+Two vectors are orthogonal exactly when their dot product is zero\footnote{For
+\(\mathbf{u},\mathbf{v}\in\mathbb{R}^n\), \(\mathbf{u}\cdot\mathbf{v}=0\) means
+the angle between them is \(90^\circ\).}.
+
+\section*{Pairwise dot products}
+\[
+\begin{aligned}
+(1,1,1)\cdot(2,-1,3) &= 4,\\
+(1,1,1)\cdot(3,1,0) &= 4,\\
+(1,1,1)\cdot(-3,0,2) &= -1,\\
+(2,-1,3)\cdot(3,1,0) &= 5,\\
+(2,-1,3)\cdot(-3,0,2) &= 0,\\
+(3,1,0)\cdot(-3,0,2) &= -9.
+\end{aligned}
+\]
+
+\resultbox{The only orthogonal pair is
+\((2,-1,3)\) and \((-3,0,2)\).}
+
+\examplebox{Check:
+\[
+(2,-1,3)\cdot(-3,0,2)=2(-3)+(-1)0+3(2)=-6+0+6=0.
+\]
+Since the dot product is zero, these vectors are orthogonal.}
+
+\end{document}

@@ -42,12 +42,16 @@ In theoretical physics, a \emph{closed} system is one you describe with a
 \emph{complete} set of dynamical variables and \emph{deterministic} (or, in
 quantum theory, unitary) laws that involve \emph{only} those variables.
 Nothing outside the model is allowed to influence the state except through
-quantities you have already included.
+quantities you have already included.\footnote{A \emph{dynamical variable} is a
+quantity whose value changes with time and helps specify the system state. A law
+is \emph{deterministic} when the current state fixes a unique next state.}
 
 \section*{Implicit Assumptions}
 Calling a system ``closed'' usually includes several idealizations:
 \begin{itemize}
-  \item \textbf{Exhaustive state:} all relevant degrees of freedom are modeled.
+  \item \textbf{Exhaustive state:} all relevant degrees of freedom are modeled.\footnote{A
+  \emph{degree of freedom} is an independent parameter needed to describe a
+  system configuration.}
   \item \textbf{Known laws:} dynamics is assumed exact for that state.
   \item \textbf{Isolation:} outside influences are negligible or explicitly modeled.
   \item \textbf{Boundary in time and space:} closure is only approximate over a chosen window.
@@ -64,7 +68,8 @@ An \emph{open} system exchanges energy, momentum, particles, or information with
 an environment that is not fully tracked. Its effective dynamics then includes
 dissipation, noise, driving, or explicit coupling terms. Often the combined
 ``system + environment'' is treated as closed, while the subsystem of interest
-is open.
+is open.\footnote{A \emph{subsystem} is a selected part of a larger physical
+system. \emph{Dissipation} means irreversible energy transfer (often to heat).}
 
 \resultbox{Classical mechanics often starts with closed deterministic models.
 When that is insufficient, one either enlarges the modeled system or uses

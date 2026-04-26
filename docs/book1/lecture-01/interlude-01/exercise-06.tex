@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\promptbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{blue!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Prompt. }#1}}
+  \endgroup
+}
+\newcommand{\resultbox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{purple!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Result. }#1}}
+  \endgroup
+}
+\newcommand{\examplebox}[1]{%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{green!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Example. }#1}}
+  \endgroup
+}
+
+\title{\textbf{Book 1 --- Lecture 1 --- Interlude 1 --- Exercise 6}\\[2mm]
+\large Why Orthogonal Vectors Have Zero Dot Product}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\promptbox{Can you explain why the dot product of two vectors that are
+orthogonal is \(0\)?}
+
+\section*{Geometric explanation}
+The dot product can be written as
+\[
+\mathbf{A}\cdot\mathbf{B} = \lVert\mathbf{A}\rVert\lVert\mathbf{B}\rVert\cos\theta,
+\]
+where \(\theta\)\footnote{\(\theta\) is the angle between the vectors.} is the
+angle between the vectors.
+
+If vectors are orthogonal, then \(\theta=90^\circ\) (or \(\pi/2\) radians), and
+\(\cos(90^\circ)=0\). Therefore,
+\[
+\mathbf{A}\cdot\mathbf{B}
+= \lVert\mathbf{A}\rVert\lVert\mathbf{B}\rVert\cdot 0
+= 0.
+\]
+
+\section*{Component explanation}
+In coordinates, dot product is
+\[
+\mathbf{A}\cdot\mathbf{B}=\sum_i A_i B_i.
+\]
+Orthogonality means there is no component of one vector along the direction of
+the other\footnote{Equivalently, the projection of one onto the other has zero
+length.}, so the signed component products cancel to zero.
+
+\resultbox{Orthogonal vectors have zero dot product because the geometric factor
+\(\cos\theta\) becomes zero at \(90^\circ\).}
+
+\examplebox{In 2D, \((1,0)\) and \((0,5)\) are perpendicular. Their dot product
+is \(1\cdot0+0\cdot5=0\).}
+
+\end{document}
