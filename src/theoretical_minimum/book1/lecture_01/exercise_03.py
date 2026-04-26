@@ -2,7 +2,7 @@
 
 Markdown copy (linked from the repo README): ``docs/book1/lecture-01/exercise-03.md``.
 
-In Lecture 1 / this chapter, a dynamical law ``N_{n+1} = f(N_n)`` on the integer
+In Lecture 1 / this chapter, a dynamical law ``N(n+1) = f(N(n))`` on the integer
 line is **allowable** when it is:
 
 1. **Deterministic** - each state has exactly one successor (a function
@@ -10,8 +10,8 @@ line is **allowable** when it is:
 2. **Reversible** - each state has exactly one predecessor (the same law read
    backward is deterministic), so ``f`` is a **bijection** of ``Z``.
 
-Equation (2) in the book is ``N_{n+1} = N_n - 1`` (the "minus-one" step), not
-another copy of +1.
+Equation (1) is ``N(n+1) = N(n) - 1`` (the "minus-one" step). We evaluate
+Eqs. (2)-(5) against the allowable criteria.
 """
 
 from __future__ import annotations
@@ -21,26 +21,26 @@ from typing import Final, TypeAlias
 
 IntMap: TypeAlias = Callable[[int], int]
 
-# Book equations (2)-(5) for integer state N_n in Z.
+# Book equations (2)-(5) for integer state N(n) in Z.
 
 
-def step_eq2_minus_one(n: int) -> int:
-    """Eq. (2): N_{n+1} = N_n - 1."""
-    return n - 1
+def step_eq2_plus_one(n: int) -> int:
+    """Eq. (2): N(n+1) = N(n) + 1."""
+    return n + 1
 
 
 def step_eq3_plus_two(n: int) -> int:
-    """Eq. (3): N_{n+1} = N_n + 2."""
+    """Eq. (3): N(n+1) = N(n) + 2."""
     return n + 2
 
 
 def step_eq4_square(n: int) -> int:
-    """Eq. (4): N_{n+1} = N_n^2."""
+    """Eq. (4): N(n+1) = N(n)^2."""
     return n * n
 
 
 def step_eq5_sign_flip(n: int) -> int:
-    """Eq. (5): N_{n+1} = (-1)^{N_n} N_n, using parity on Z.
+    """Eq. (5): N(n+1) = (-1)^{N(n)} N(n), using parity on Z.
 
     For integer *n*, (-1)^n is +1 if *n* is even and -1 if *n* is odd (parity
     via ``n % 2`` agrees with this for negative integers in Python).
@@ -50,7 +50,7 @@ def step_eq5_sign_flip(n: int) -> int:
 
 
 LAWS: Final[dict[str, IntMap]] = {
-    "eq2_minus_one": step_eq2_minus_one,
+    "eq2_plus_one": step_eq2_plus_one,
     "eq3_plus_two": step_eq3_plus_two,
     "eq4_square": step_eq4_square,
     "eq5_sign_flip": step_eq5_sign_flip,

@@ -31,12 +31,12 @@ def test_eq5_preimage_is_inverse(n: int) -> None:
 
 
 def test_eq2_eq3_are_global_bijections_via_inverses() -> None:
-    """f(n)=n−1 and f(n)=n+2 are permutations of ℤ: each has a two-sided inverse."""
-    f2 = exercise_03.step_eq2_minus_one
+    """f(n)=n+1 and f(n)=n+2 are permutations of Z: each has a two-sided inverse."""
+    f2 = exercise_03.step_eq2_plus_one
     f3 = exercise_03.step_eq3_plus_two
     for n in range(-400, 401):
-        assert f2(n) + 1 == n
-        assert f2(n + 1) == n
+        assert f2(n) - 1 == n
+        assert f2(n - 1) == n
         assert f3(n) - 2 == n
         assert f3(n - 2) == n
 
