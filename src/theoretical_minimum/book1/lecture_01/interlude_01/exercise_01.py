@@ -17,6 +17,7 @@ when plotting dependencies are not installed.
 from __future__ import annotations
 
 import math
+from pathlib import Path
 
 
 def f_of_t(t: float) -> float:
@@ -42,8 +43,8 @@ def x_of_t(t: float) -> float:
     return math.sin(t) ** 2 - math.cos(t)
 
 
-def plot_prompt_functions() -> None:
-    """Plot all four prompt functions in a 2x2 figure.
+def _build_prompt_figure():
+    """Build and return a matplotlib figure with all four prompt functions.
 
     Raises:
         ImportError: If matplotlib or numpy is not installed.
@@ -87,7 +88,24 @@ def plot_prompt_functions() -> None:
     axes[1, 1].grid(True, alpha=0.3)
 
     fig.suptitle("Book 1 / Lecture 1 / Interlude 1 / Exercise 1", fontsize=12)
+    return fig
+
+
+def plot_prompt_functions() -> None:
+    """Display all four prompt functions in a 2x2 figure."""
+    fig = _build_prompt_figure()
+    import matplotlib.pyplot as plt
+
     plt.show()
+
+
+def save_prompt_plot_png(path: str | Path) -> Path:
+    """Save the 2x2 plot figure to a PNG file and return the resolved path."""
+    target = Path(path).expanduser().resolve()
+    target.parent.mkdir(parents=True, exist_ok=True)
+    fig = _build_prompt_figure()
+    fig.savefig(target, dpi=160)
+    return target
 
 
 if __name__ == "__main__":

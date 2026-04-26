@@ -36,3 +36,10 @@ Reasonable first windows:
 
 These are only starting points; zooming in/out helps identify turning points and
 overall behavior.
+
+## Static plots (GitHub preview)
+
+GitHub renders static images, not live Python plotting windows. The following
+figure was generated from the companion Python module and committed as a PNG:
+
+![Interlude 1 Exercise 1 plots](./exercise-01-plots.png)
