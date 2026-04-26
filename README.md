@@ -14,6 +14,7 @@ The goal is not to replace the books or lectures, but to provide reproducible, c
 - **Book 1, Lecture 1, Exercise 1** — [Closed vs open systems](docs/book1/lecture-01/exercise-01.md)
 - **Book 1, Lecture 1, Exercise 2** — [Classifying six-state (die) laws](docs/book1/lecture-01/exercise-02.md)
 - **Book 1, Lecture 1, Exercise 3** — [Allowable laws on the integer line](docs/book1/lecture-01/exercise-03.md)
+- **Book 1, Lecture 1, Interlude 1, Exercise 1** — [Plotting four introductory functions](docs/book1/lecture-01/interlude-01/exercise-01.md)
 
 ## Math in Markdown (GitHub style)
 
