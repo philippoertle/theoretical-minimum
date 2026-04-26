@@ -14,3 +14,20 @@ The goal is not to replace the books or lectures, but to provide reproducible, c
 - **Book 1, Lecture 1, Exercise 1** — [Closed vs open systems](docs/book1/lecture-01/exercise-01.md)
 - **Book 1, Lecture 1, Exercise 2** — [Classifying six-state (die) laws](docs/book1/lecture-01/exercise-02.md)
 - **Book 1, Lecture 1, Exercise 3** — [Allowable laws on the integer line](docs/book1/lecture-01/exercise-03.md)
+
+## Math in Markdown (GitHub style)
+
+To keep equations readable on GitHub, use TeX math delimiters consistently:
+
+- Inline math: `$...$` (example: `$N_{n+1}=N_n+1$`)
+- Display math blocks: `$$...$$`
+
+Preferred notation:
+
+- Use TeX forms like `\mathbb{Z}`, `N_{n+1}`, `N_n`, `n^2`, `(-1)^{N_n}`.
+- Use TeX arrows in math mode, e.g. `\to`, `\leftrightarrow`, `\mapsto`.
+- Avoid Unicode math symbols in source (`ℤ`, `→`, `−`, `²`) to prevent renderer/font ambiguity.
+
+Practical tip:
+
+- Keep long equations in standalone display blocks, and use inline math for short expressions in prose/tables.

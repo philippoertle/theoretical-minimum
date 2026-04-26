@@ -62,10 +62,10 @@ There are **11** such partitions:
 
 | Example | Cycle type (partition) | Structure |
 |---------|-------------------------|-----------|
-| 1 → 2 → 3 → 4 → 5 → 6 → 1 | (6) | single 6-cycle |
-| 1 → 3 → 2 → 6 → 4 → 5 → 1 | (6) | single 6-cycle (different ordering) |
-| 1 → 2 → 6 → 1 and 3 → 4 → 5 → 3 | (3, 3) | two 3-cycles |
-| 1 → 1; 5 ↔ 6; 2 → 3 → 4 → 2 | (3, 2, 1) | 3-cycle, 2-cycle, fixed point |
+| $1\to2\to3\to4\to5\to6\to1$ | (6) | single 6-cycle |
+| $1\to3\to2\to6\to4\to5\to1$ | (6) | single 6-cycle (different ordering) |
+| $1\to2\to6\to1$ and $3\to4\to5\to3$ | (3, 3) | two 3-cycles |
+| $1\to1$; $5\leftrightarrow6$; $2\to3\to4\to2$ | (3, 2, 1) | 3-cycle, 2-cycle, fixed point |
 
 Examples 1 and 2 are the **same class**—both are long 6-cycles—even though the
 arrows visit labels in a different order.
