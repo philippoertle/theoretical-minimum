@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+% Footnotes inside \parbox (used below) are otherwise trapped; savenotes emits them
+% at the end of the wrapper so they appear on the page foot as usual.
+\usepackage{footnote}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\promptbox}[1]{%
+  \begin{savenotes}%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{blue!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Prompt. }#1}}
+  \endgroup
+  \end{savenotes}%
+}
+\newcommand{\resultbox}[1]{%
+  \begin{savenotes}%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{purple!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Result. }#1}}
+  \endgroup
+  \end{savenotes}%
+}
+\newcommand{\examplebox}[1]{%
+  \begin{savenotes}%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{green!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Example. }#1}}
+  \endgroup
+  \end{savenotes}%
+}
+
+\title{\textbf{Book 1 --- Lecture 2 --- Exercise 2}\\[2mm]
+\large Second Derivatives of Four Introductory Functions}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\promptbox{The derivative of a derivative is called the second derivative and is
+written \((d^2 f(t))/d^2\).\footnote{Operationally, the second derivative is ``the
+derivative of the derivative'': one first computes \(f'(t)\), then differentiates
+that new function of \(t\) again. Standard Leibniz notation writes the variable in
+the denominator twice, e.g.\ \(\dfrac{d^2 f}{dt^2}\) for a function of \(t\), and
+\(\dfrac{d^2 g}{dx^2}\), \(\dfrac{d^2\theta}{d\alpha^2}\), \(\dfrac{d^2 x}{dt^2}\)
+for the other independent variables below. The \(d^2\) in the numerator indicates
+that differentiation has been applied twice.} Take the second derivative of each of
+the functions listed above:}
+\[
+\begin{aligned}
+f(t) &= t^4 + 3t^3 - 12t^2 + t - 6, \\
+g(x) &= \sin(x) - \cos(x), \\
+\theta(\alpha) &= e^\alpha + \alpha\ln(\alpha), \\
+x(t) &= \sin^2(t) - \cos(t).
+\end{aligned}
+\]
+
+\section*{\(f(t)\)}
+From Exercise 1, \(f'(t)=4t^3+9t^2-24t+1\).\footnote{Exercise 1 computed first
+derivatives of the same four functions.} Differentiate again:\footnote{For a
+polynomial, each differentiation lowers the highest power by one; here \(f\) was
+degree \(4\) in \(t\), so \(f'\) is degree \(3\) and \(f''\) is degree \(2\).}
+\[
+f''(t)=\frac{d^2f}{dt^2}=12t^2+18t-24.
+\]
+
+\section*{\(g(x)\)}
+We had \(g'(x)=\cos(x)+\sin(x)\).\footnote{As in Exercise 1, angles are in radians.}
+Thus
+\[
+g''(x)=\frac{d^2g}{dx^2}=-\sin(x)+\cos(x).
+\]\footnote{Apply \((\cos x)'=-\sin x\) and \((\sin x)'=\cos x\) to \(g'(x)\).}
+
+\section*{\(\theta(\alpha)\) (\(\alpha>0\))}
+We had \(\theta'(\alpha)=e^\alpha+\ln(\alpha)+1\). Differentiating once more term by
+term,\footnote{For \(\alpha>0\), \(\frac{d}{d\alpha}\ln(\alpha)=1/\alpha\). The summand
+\(+1\) is constant and has derivative \(0\). Also \((e^\alpha)'=e^\alpha\).}
+\[
+\theta''(\alpha)=\frac{d^2\theta}{d\alpha^2}=e^\alpha+\frac{1}{\alpha}.
+\]
+
+\section*{\(x(t)\)}
+One convenient form of the first derivative is \(x'(t)=\sin(t)\bigl(2\cos(t)+1\bigr)\).
+Differentiate using the product rule:\footnote{Write \(x'(t)=u(t)v(t)\) with
+\(u=\sin t\) and \(v=2\cos t+1\). Then \(x''=u'v+uv'\).}
+\[
+\begin{aligned}
+x''(t)=\frac{d^2x}{dt^2}
+&=\cos(t)\bigl(2\cos(t)+1\bigr)+\sin(t)\bigl(-2\sin(t)\bigr)\\
+&=2\cos^2(t)+\cos(t)-2\sin^2(t)\\
+&=2\cos(2t)+\cos(t),
+\end{aligned}
+\]
+using \(\cos^2 t-\sin^2 t=\cos(2t)\).\footnote{This is the cosine double-angle identity;
+it rewrites the combination \(2\cos^2 t-2\sin^2 t\) as \(2\cos(2t)\).}
+
+\resultbox{In summary,
+\[
+\begin{aligned}
+\frac{d^2f}{dt^2} &= 12t^2+18t-24,\\[2pt]
+\frac{d^2g}{dx^2} &= \cos(x)-\sin(x),\\[2pt]
+\frac{d^2\theta}{d\alpha^2} &= e^\alpha+\frac{1}{\alpha}\quad(\alpha>0),\\[2pt]
+\frac{d^2x}{dt^2} &= 2\cos(2t)+\cos(t).
+\end{aligned}
+\]}
+
+\examplebox{At \(t=0\): \(f''(0)=-24\), \(x''(0)=2+1=3\). At \(\alpha=1\):
+\(\theta''(1)=e+1\).}
+
+\end{document}

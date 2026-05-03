@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+% Footnotes inside \parbox (used below) are otherwise trapped; savenotes emits them
+% at the end of the wrapper so they appear on the page foot as usual.
+\usepackage{footnote}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\promptbox}[1]{%
+  \begin{savenotes}%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{blue!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Prompt. }#1}}
+  \endgroup
+  \end{savenotes}%
+}
+\newcommand{\resultbox}[1]{%
+  \begin{savenotes}%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{purple!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Result. }#1}}
+  \endgroup
+  \end{savenotes}%
+}
+\newcommand{\examplebox}[1]{%
+  \begin{savenotes}%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{green!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Example. }#1}}
+  \endgroup
+  \end{savenotes}%
+}
+
+\title{\textbf{Book 1 --- Lecture 2 --- Exercise 1}\\[2mm]
+\large Derivatives of Four Introductory Functions}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\promptbox{Calculate the derivatives\footnote{A \emph{derivative} measures how
+sensitive a function's output is to a small change in its input; on a graph, it is
+the slope of the tangent line at a point. The prime notation \(f'\) means ``the
+derivative of \(f\) with respect to the variable named in context.''} of each of
+these functions:}
+\[
+\begin{aligned}
+f(t) &= t^4 + 3t^3 - 12t^2 + t - 6, \\
+g(x) &= \sin(x) - \cos(x), \\
+\theta(\alpha) &= e^\alpha + \alpha\ln(\alpha), \\
+x(t) &= \sin^2(t) - \cos(t).
+\end{aligned}
+\]
+
+\section*{\(f(t)\) (polynomial)}
+Differentiate term by term using \(\dfrac{d}{dt}t^n = n t^{n-1}\):\footnote{This
+is the \emph{power rule}. Sums and constant multiples of terms differentiate
+term-by-term (\emph{linearity} of the derivative operator).}
+\[
+\begin{aligned}
+f'(t) &= 4t^3 + 9t^2 - 24t + 1.
+\end{aligned}
+\]
+
+\section*{\(g(x)\) (sine and cosine)}
+Using \((\sin x)'=\cos x\) and \((\cos x)'=-\sin x\),\footnote{These are the basic
+trigonometric derivatives with respect to the angle \(x\) (measured in radians,
+as is standard in calculus and physics).}
+\[
+g'(x) = \cos(x) + \sin(x).
+\]
+
+\section*{\(\theta(\alpha)\) (exponential plus \(\alpha\ln\alpha\))}
+Here \(\alpha>0\) so that \(\ln(\alpha)\) is defined.\footnote{\(\ln\) is the
+natural logarithm (base \(e\)). It requires a positive argument \(\alpha>0\).}
+We have \((e^\alpha)'=e^\alpha\),\footnote{The exponential \(e^x\) equals its own
+derivative: \(\frac{d}{dx}e^x=e^x\).} and by the product rule,\footnote{The
+\emph{product rule}: if \(u\) and \(v\) are differentiable functions of the same
+variable, then \((uv)'=u'v+uv'\).}
+\[
+\frac{d}{d\alpha}\bigl(\alpha\ln(\alpha)\bigr)
+= 1\cdot\ln(\alpha) + \alpha\cdot\frac{1}{\alpha}
+= \ln(\alpha) + 1.
+\]
+Therefore
+\[
+\theta'(\alpha) = e^\alpha + \ln(\alpha) + 1.
+\]
+
+\section*{\(x(t)\) (chain rule on \(\sin^2 t\))}
+Write \(\sin^2(t) = \bigl(\sin t\bigr)^2\). By the chain rule,\footnote{The
+\emph{chain rule} composes rates of change: if \(y=h(u)\) and \(u=k(t)\), then
+\(\frac{dy}{dt}=h'(u)\,k'(t)\). Here \(h(u)=u^2\) and \(u=\sin t\).}
+\[
+\frac{d}{dt}\sin^2(t) = 2\sin(t)\cos(t) = \sin(2t).
+\]\footnote{The identity \(2\sin t\cos t=\sin(2t)\) is the sine double-angle formula.}
+Also \(\dfrac{d}{dt}(-\cos t)=\sin t\).\footnote{Constants factor out of
+derivatives, and \((\cos t)'=-\sin t\), so \(\frac{d}{dt}(-\cos t)=-(-\sin t)=\sin t\).}
+Hence
+\[
+x'(t) = 2\sin(t)\cos(t) + \sin(t)
+= \sin(t)\bigl(2\cos(t)+1\bigr).
+\]
+
+\resultbox{Summarizing,
+\[
+\begin{aligned}
+f'(t) &= 4t^3 + 9t^2 - 24t + 1,\\
+g'(x) &= \cos(x) + \sin(x),\\
+\theta'(\alpha) &= e^\alpha + \ln(\alpha) + 1 \quad (\alpha>0),\\
+x'(t) &= \sin(t)\bigl(2\cos(t)+1\bigr).
+\end{aligned}
+\]}
+
+\examplebox{At \(\alpha=1\): \(\theta'(1)=e^1+\ln(1)+1=e+1\), since \(\ln(1)=0\).}
+
+\end{document}

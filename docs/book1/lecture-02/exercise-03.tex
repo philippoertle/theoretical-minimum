@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+% Footnotes inside \parbox (used below) are otherwise trapped; savenotes emits them
+% at the end of the wrapper so they appear on the page foot as usual.
+\usepackage{footnote}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\promptbox}[1]{%
+  \begin{savenotes}%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{blue!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Prompt. }#1}}
+  \endgroup
+  \end{savenotes}%
+}
+\newcommand{\resultbox}[1]{%
+  \begin{savenotes}%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{purple!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Result. }#1}}
+  \endgroup
+  \end{savenotes}%
+}
+\newcommand{\examplebox}[1]{%
+  \begin{savenotes}%
+  \begingroup\setlength{\fboxsep}{10pt}\noindent
+  \colorbox{green!8}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Example. }#1}}
+  \endgroup
+  \end{savenotes}%
+}
+
+\title{\textbf{Book 1 --- Lecture 2 --- Exercise 3}\\[2mm]
+\large Chain Rule for Three Composed Functions}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\promptbox{Use the chain rule to find the derivatives of each of the following
+functions.\footnote{The \emph{chain rule}: if \(y=h(u)\) and \(u=k(t)\) are
+differentiable, then \(\dfrac{dy}{dt}=h'(u)\,k'(t)\). The same idea applies when
+the outer function is exponential, logarithmic, or built from sine and cosine.}
+\[
+\begin{aligned}
+g(t) &= \sin(t^2) - \cos(t^2), \\
+\theta(\alpha) &= e^{3\alpha} + 3\alpha\,\ln(3\alpha), \\
+x(t) &= \sin^2(t^2) - \cos(t^2).
+\end{aligned}
+\]
+}
+
+\section*{\(g(t)=\sin(t^2)-\cos(t^2)\)}
+Set \(u(t)=t^2\), so \(\dfrac{du}{dt}=2t\).\footnote{Here the ``inner'' function is
+\(t^2\); every appearance of \(t^2\) in \(\sin\) and \(\cos\) is differentiated
+through this factor \(2t\).} Then \(g(t)=\sin u-\cos u\), and
+\[
+\frac{dg}{dt}=\cos u\cdot\frac{du}{dt}-(-\sin u)\cdot\frac{du}{dt}
+=(\cos u+\sin u)\frac{du}{dt}.
+\]
+Substitute \(u=t^2\):
+\[
+g'(t)=2t\bigl(\cos(t^2)+\sin(t^2)\bigr).
+\]
+
+\section*{\(\theta(\alpha)=e^{3\alpha}+3\alpha\,\ln(3\alpha)\)}
+Require \(\alpha>0\) so that \(\ln(3\alpha)\) is defined.\footnote{The argument of
+\(\ln\) must be positive: here \(3\alpha>0\), equivalently \(\alpha>0\).}
+
+For \(e^{3\alpha}\), let \(v=3\alpha\); then \(\dfrac{d}{d\alpha}e^{3\alpha}
+= e^v\cdot 3 = 3e^{3\alpha}\).
+
+For \(3\alpha\,\ln(3\alpha)\), use the product rule with \(a(\alpha)=3\alpha\) and
+\(b(\alpha)=\ln(3\alpha)\).\footnote{\(\dfrac{d}{d\alpha}\ln(3\alpha)=\dfrac{1}{3\alpha}\cdot 3
+=\dfrac{1}{\alpha}\) by the chain rule on \(\ln(3\alpha)\).}
+Now \(a'=3\) and \(b'=1/\alpha\), so
+\[
+\frac{d}{d\alpha}\bigl(3\alpha\,\ln(3\alpha)\bigr)=3\ln(3\alpha)+3\alpha\cdot\frac{1}{\alpha}
+=3\ln(3\alpha)+3.
+\]
+Therefore
+\[
+\theta'(\alpha)=3e^{3\alpha}+3\ln(3\alpha)+3
+=3\bigl(e^{3\alpha}+\ln(3\alpha)+1\bigr).
+\]
+
+\section*{\(x(t)=\sin^2(t^2)-\cos(t^2)\)}
+Write \(\sin^2(t^2)=\bigl(\sin(t^2)\bigr)^2\). Again set \(u=t^2\) with
+\(\dfrac{du}{dt}=2t\).\footnote{This combines two uses of the chain rule: squaring
+the sine, and the argument \(t^2\) inside the sine.} First,
+\[
+\frac{d}{dt}\sin^2(t^2)=2\sin(t^2)\cos(t^2)\cdot\frac{d}{dt}(t^2)
+=4t\,\sin(t^2)\cos(t^2).
+\]
+Also \(\dfrac{d}{dt}\bigl(-\cos(t^2)\bigr)=\sin(t^2)\cdot 2t=2t\sin(t^2)\). Hence
+\[
+x'(t)=4t\,\sin(t^2)\cos(t^2)+2t\sin(t^2)
+=2t\,\sin(t^2)\bigl(2\cos(t^2)+1\bigr).
+\]
+
+\resultbox{Summarizing (with \(\alpha>0\) for \(\theta\)),
+\[
+\begin{aligned}
+g'(t) &= 2t\bigl(\cos(t^2)+\sin(t^2)\bigr),\\
+\theta'(\alpha) &= 3e^{3\alpha}+3\ln(3\alpha)+3,\\
+x'(t) &= 2t\,\sin(t^2)\bigl(2\cos(t^2)+1\bigr).
+\end{aligned}
+\]}
+
+\examplebox{At \(t=0\): \(g'(0)=0\) and \(x'(0)=0\) because every term carries a
+factor \(t\). At \(\alpha=1\): \(\theta'(1)=3e^3+3\ln 3+3\).}
+
+\end{document}
